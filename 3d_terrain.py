@@ -9,7 +9,7 @@ pygame.init()
 pygame.display.set_caption('3D Terrain')
 screen = pygame.display.set_mode((500, 500), 0, 32)
 
-FOV = 100
+FOV = 90
 FOG = True
 
 def offset_polygon(polygon, offset):
@@ -50,7 +50,7 @@ polygons = []
 def generate_poly_row(y):
     global polygons
     # there are 30 "rectangles" in a row
-    for x in range(60):
+    for x in range(30):
 
         # make a copy of the base square polygon data
         poly_copy = deepcopy(square_polygon)
@@ -91,7 +91,7 @@ def generate_poly_row(y):
         polygons = [[poly_copy, c]] + polygons
 
 next_row = 0
-for y in range(50):
+for y in range(25):
     generate_poly_row(y)
     next_row += 1
 
